@@ -11,6 +11,10 @@ struct ContentView: View {
                 Button("Tap to show detail"){
                     //more code
                     self.isShowingDetailView = true
+                     //but after a certain period of time hide it again
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                        self.isShowingDetailView = false //hiding
+                    }
                 }
             }
         .navigationBarTitle("Navigation")
