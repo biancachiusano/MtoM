@@ -17,6 +17,31 @@ struct ContentView: View {
         }
     }
 }
+//WITH SELECTION
+struct ContentView: View {
+    
+    @State private var selection: String? = nil
+    
+    var body: some View {
+        NavigationView{
+            VStack(spacing: 30){
+                NavigationLink(destination: Text("Second view"), tag: "Second", selection: $selection){EmptyView()}
+                NavigationLink(destination: Text("Third view"), tag: "Third", selection: $selection){EmptyView()}
+                
+                Button("Tap to show second"){
+                    //more code
+                    self.selection = "Second"
+                }
+                Button("Tap to show third"){
+                    //more code
+                    self.selection = "Third"
+                }
+            }
+        .navigationBarTitle("Navigation")
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
