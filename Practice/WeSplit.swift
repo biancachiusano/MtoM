@@ -56,7 +56,8 @@ struct ContentView: View {
                            Text("$\(totalPerPerson, specifier:  "%.2f")")
                        }
                }
-        }.navigationBarTitle("We Split")
+            .navigationBarTitle("We Split")
+        }
         
     }
     
